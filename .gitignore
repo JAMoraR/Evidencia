@@ -1,0 +1,17 @@
+# Visual Studio User Cache (Crucial for fixing your error)
+.vs/
+
+# Visual Studio temporary files
+*.suo
+
+# NuGet cache files
+*.nupkg
+
+# Build outputs
+[Dd]ebug/
+[Rr]elease/
+*.obj
+*.exe
+*.dll
+*.pdb
+*.sdf
