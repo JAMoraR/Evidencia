@@ -4,13 +4,8 @@ using System.Data.SqlClient;
 
 namespace CapaDatos
 {
-    // Esta clase maneja la conexión y los métodos de acceso a datos
     public class CapaDatos
     {
-        // 1. Cadena de Conexión (Modificar según tu servidor) [cite: 88, 89]
-        // **********************************************************************************************
-        // ¡IMPORTANTE! Reemplaza TU_CADENA_DE_CONEXIÓN con tu cadena de SQL Server (pista: copiar desde SSMS)
-        // **********************************************************************************************
         private SqlConnection Conexion = new SqlConnection(
             "Server=JAMORAR\\SQLJAMORAR;" + // Cambiar servidor
             "Database=BD_Condominio;" + // Cambiar BD
@@ -18,9 +13,6 @@ namespace CapaDatos
             "Password=abc;" // Cambiar contraseña
             );
 
-        // --- MÉTODOS CRUD ---
-
-        // 2. Método para Listar Propietarios (SELECT)
         public DataTable ListarPropietarios()
         {
             DataTable tabla = new DataTable();
@@ -42,7 +34,6 @@ namespace CapaDatos
             return tabla;
         }
 
-        // 3. Método para Insertar Propietario (INSERT)
         public void InsertarPropietario(string nombre, string apellido, string torre, string numDepto, string telefono)
         {
             SqlCommand comando = new SqlCommand("INSERT INTO Propietarios (Nombre, Apellido, Torre, NumeroDepartamento, Telefono) VALUES (@nombre, @apellido, @torre, @numDepto, @telefono)", Conexion);
@@ -67,7 +58,6 @@ namespace CapaDatos
             }
         }
 
-        // 4. Método para Actualizar Propietario (UPDATE)
         public void ActualizarPropietario(int id, string nombre, string apellido, string torre, string numDepto, string telefono)
         {
             SqlCommand comando = new SqlCommand("UPDATE Propietarios SET Nombre = @nombre, Apellido = @apellido, Torre = @torre, NumeroDepartamento = @numDepto, Telefono = @telefono WHERE IdPropietario = @id", Conexion);
@@ -93,7 +83,6 @@ namespace CapaDatos
             }
         }
 
-        // 5. Método para Eliminar Propietario (DELETE)
         public void EliminarPropietario(int id)
         {
             SqlCommand comando = new SqlCommand("DELETE FROM Propietarios WHERE IdPropietario = @id", Conexion);

@@ -1,6 +1,5 @@
 ﻿namespace CapaLogica
 {
-    // Clase que representa la estructura de la tabla Propietarios (Requerimiento 22)
     public class Propietario
     {
         public int IdPropietario { get; set; }
